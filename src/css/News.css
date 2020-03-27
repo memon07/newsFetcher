@@ -1,0 +1,30 @@
+.news-img {
+    object-fit: cover;
+    padding-bottom: 15px;
+}
+
+
+.news-card__main h3 {
+    font-size: 16px !important;
+}
+
+.news-card__main h5 {
+    font-size: 14px;
+    color: #777;
+}
+
+
+.news__div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.news-card__main {
+    min-width: 325px;
+    margin-top: 8px;
+    margin-right: auto;
+    margin-bottom: 28px;
+    margin-left: auto;
+    max-width: 325px;
+    cursor: pointer;
+}

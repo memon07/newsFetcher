@@ -1,26 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from 'react-redux'
+
+import { Router } from 'react-router'
+// import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { Switch, Route} from 'react-router-dom';
+import history from './history'
+
+import { PersistGate } from 'redux-persist/integration/react'
+import { persistor, store } from './store/createStore';
+
+
+import Signup from './components/Signup';
+import HomeHOC from './components/HomeHOC';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
-export default App;
+    return (        
+        <Provider store={store}>
+        <PersistGate
+          loading={null}
+          persistor={persistor}
+        >
+            <Router history={history}>
+                <Switch>
+                    <Route exact path="/"  component={Signup} />
+                    <Route exact path='/dashboard' component={HomeHOC} />
+                </Switch>
+            </Router>
+        </PersistGate>
+      </Provider>
+    )
+}
+    
+export default App
+    
+    
