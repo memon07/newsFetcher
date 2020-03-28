@@ -1,0 +1,25 @@
+.history_cards h5 {
+    color: #777;
+    font-size: 14px;
+}
+
+.history_cards h3:first-child {
+    margin-bottom: 3px;
+    font-size: 22px;
+}
+
+.history_cards h3:last-of-type {
+    font-size: 18px;
+}
+
+.history_cards h4 {
+    font-size: 16px;
+    padding-top: 10px;
+}
+
+.history_cards {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #f8fcff;
+}

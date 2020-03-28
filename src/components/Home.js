@@ -8,27 +8,15 @@ import '../css/Home.css'
 
 function Home(props) {
 
-
-    // if(props.user === null || props.user === 'undefined'){
-    //     return <>
-    //         <div className="container">
-    //             <div className="row">
-    //                 <div className="col-12 pt-4 text-center">
-    //                     <h3 className="text-center">Please Sign to access our module</h3>
-    //                     <Button onClick={() => {history.push("/")}}>
-    //                         Sign in</Button>
-    //                 </div>
-    //             </div>
-    //         </div>
-    //     </>
-    // }
+console.log(props.user.payload.username)
     return (
         <div className="container">
             <div className="row">
                 <div className="col-12">
                     <h3 className="mb-1 mt-3">Welcome ,</h3>
-                    <h5 className="home-username">
-                    </h5>
+                    <h4 className="home-username">
+                        {props.user ? props.user.payload.username : ''}
+                    </h4>
                 </div>
 
                 <News/>

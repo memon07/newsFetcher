@@ -6,6 +6,7 @@ import moment from 'moment';
 import '../css/SignupForm.css'
 
 import { postRegister } from '../actions/user'
+import { postVisitor } from '../actions/visitor'
 
 const { Option } = Select;
 
@@ -35,6 +36,8 @@ class SignupForm extends Component {
         }
         console.log(data)
         const { postData } = this.props;
+        const {postVis } = this.props;
+        postVis(data)
         postData(data);
         this.props.form.resetFields()
       }
@@ -164,7 +167,8 @@ class SignupForm extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return{
-    postData : (url,data) => dispatch(postRegister(url,data))
+    postData : (data) => dispatch(postRegister(data)),
+    postVis : (data) => dispatch(postVisitor(data))
   }
 }
 

@@ -1,9 +1,8 @@
-import * as actionTypes from '../actionTypes/user'
+import * as actionTypes from '../actionTypes/visitor'
 
-import history from "../history"
-import { success ,errorMsg} from '../components/message'
+import { errorMsg } from '../components/message'
 
-export function postRegister(data) {
+export function postVisitor(data) {
   return (dispatch) => {
     try {
       let dispatchData = {
@@ -15,10 +14,7 @@ export function postRegister(data) {
             "toe":data.toe,
             "toexit":data.toexit
       }
-        dispatch(actionTypes.postRegister(dispatchData))
-        success('Profile has been created !!')
-        history.push('/dashboard');
-
+        dispatch(actionTypes.postVisitor(dispatchData))
     }catch(e){
       errorMsg(e)
     }

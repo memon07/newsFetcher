@@ -12,6 +12,7 @@ import { persistor, store } from './store/createStore';
 
 import Signup from './components/Signup';
 import HomeHOC from './components/HomeHOC';
+import HistoryHOC from './components/HistoryHOC'
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
                 <Switch>
                     <Route exact path="/"  component={Signup} />
                     <Route exact path='/dashboard' component={HomeHOC} />
+                    <Route exact path='/history' component={HistoryHOC} />
                 </Switch>
             </Router>
         </PersistGate>

@@ -2,6 +2,8 @@ import React , {useState , useEffect } from 'react'
 import axios from 'axios'
 import '../css/News.css'
 
+import defaultImg from '../images/default.jpg'
+
  function News() {
 
     const [news, setNews] = useState([])
@@ -25,14 +27,14 @@ import '../css/News.css'
         <div className="container">
             <div className="row">
                 <div className="col-12">
-                    <h4 className="pt-5 pb-5">Latest News</h4>
+                    <h4 className="pt-5 pb-3">Latest News</h4>
                 </div>
                 <div className='col-xl-8 col-lg-9 col-md-12 col-sm-12 news__div'>
                     {
                         news.map(item => (
                             <div className="news-card__main">
                                 <a href={item.url}>
-                                    <img src={item.urlToImage} className="news-img" height="200" width="300" alt={item.title}/>
+                                    <img src={item.urlToImage ? item.urlToImage: defaultImg} className="news-img" height="200" width="300" alt={item.title}/>
                                     <h3>{item.title}</h3>
                                     <h5>by {item.author}</h5>
                                 </a>
